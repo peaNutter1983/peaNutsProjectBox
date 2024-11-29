@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>05-website</title>
+    <link rel="stylesheet" href="styles/D&D-dice.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="main">
+      <div class="header-bar">
+        <div>
+          <img class="character" src="thumbnails/female.webp">
+      </div>  
+    
+        <div class="page-logo-div">
+          <img class="page-logo" src="thumbnails/D&D-logo.webp">
+        </div>
+    
+        <div>
+          <img class="character" src="thumbnails/male.webp">
+      </div>  
+      </div>
+      
+
+      <div class="dice-bar">
+        <div class="die-thumbnail-outer-div">
+
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-1" src="thumbnails/DND.webp">
+          </div>
+          <p>D4</p>
+          <button class="D4-die" onclick="
+          playGame1();
+          ">Roll</button>
+
+        </div>
+          
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-2" src="thumbnails/DND.webp">
+          </div>
+          <p>D6</p>
+          <button class="D6-die" onclick="
+          playGame2();
+        ">Roll</button>
+        </div>
+
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-3" src="thumbnails/DND.webp">
+          </div>
+          <p>D8</p>
+          <button class="D8-die" onclick="
+          playGame3();
+        ">Roll</button>
+        </div>
+
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-4" src="thumbnails/DND.webp">
+          </div>
+          <p>D10</p>
+          <button class="D10-die" onclick="
+          playGame4();
+        ">Roll</button>
+        </div>
+
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-5" src="thumbnails/DND.webp">
+          </div>
+          <p>D12</p>
+          <button class="D12-die" onclick="
+          playGame5();
+        ">Roll</button>
+        </div>
+
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div">
+            <img class="die-thumbnail-6" src="thumbnails/DND.webp">
+          </div>
+          <p>D20</p>
+          <button class="D20-die" onclick="
+            playGame6();
+            ">Roll</button>
+        </div>
+
+        <div class="die-thumbnail-outer-div">
+          <div class="die-thumbnail-div" >
+            <img class="die-thumbnail-7" src="thumbnails/DND.webp">
+          </div>
+          <p>D100</p>
+          <button class="D100-die"  onclick="
+          playGame7();
+        ">Roll</button>
+        </div>
+        
+        <P class="result1Roll"></P>
+        <P class="result2Roll"></P>
+        <P class="result3Roll"></P>
+        <P class="result4Roll"></P>
+        <P class="result5Roll"></P>
+        <P class="result6Roll"></P>
+        <P class="result7Roll"></P>
+        
+      </div>
+      <div>
+        <button onclick="
+        reloadPage();
+          ">Clear Rolls</button>
+      </div>
+
+      <div class="monster-bar">
+        <img class="monster" src="thumbnails/monster1.webp">
+        <img class="monster" src="thumbnails/monster2.webp">
+        <img class="monster" src="thumbnails/monster3.webp">
+        <img class="monster" src="thumbnails/monster4.webp">
+        <img class="monster" src="thumbnails/monster5.webp">
+        <img class="monster" src="thumbnails/monster6.webp">
+      </div>
+    </main>
+
+    <script>
+
+    
+
+     function playGame1 ()  {
+      const diceRoll1 = Math.random();
+      let result1 = 'Roll';
+        if (diceRoll1 >= 0 && diceRoll1 < 1 / 4) 
+        {result1= 1;
+        } else if (diceRoll1 >= 1 / 4 && diceRoll1 < 1 / 2) {result1 = 2;
+        } else if (diceRoll1 >= 1 / 2 && diceRoll1 < 3 / 4) {result1 = 3;
+        } else if (diceRoll1 >= 3 / 4 && diceRoll1 < 1) 
+        {result1 = 4;
+        } 
+
+        document.querySelector('.D4-die').innerHTML = `${result1}`;
+
+     }
+
+     function playGame2 ()  {
+      let diceRoll2 = Math.random();
+      let result2 = 'Roll';
+        if (diceRoll2 >= 0 && diceRoll2 < 1 / 6) {result2 = 1;
+        } else if (diceRoll2 >= 1 / 6 && diceRoll2 < 2 / 6) {result2 = 2;
+        } else if (diceRoll2 >= 2 / 6 && diceRoll2 < 3 / 6) {result2 = 3;
+        } else if (diceRoll2 >= 3 / 6 && diceRoll2 < 4 / 6) {result2 = 4; 
+        } else if (diceRoll2 >= 4 / 6 && diceRoll2 < 5 / 6) {result2 = 5; 
+        } else if (diceRoll2 >= 5 / 6 && diceRoll2 < 1) 
+        {result2 = 6; 
+        } 
+        
+        document.querySelector('.D6-die').innerHTML = `${result2}`;
+
+     }
+
+     function playGame3 ()  {
+      const diceRoll3 = Math.random();
+      let result3 = 'Roll';
+        if (diceRoll3 >= 0 && diceRoll3 < 1 / 8) {result3 = 1;
+        } else if (diceRoll3 >= 1 / 8 && diceRoll3 < 2 / 8) {result3 = 2;
+        } else if (diceRoll3 >= 2 / 8 && diceRoll3 < 3 / 8) {result3 = 3;
+        } else if (diceRoll3 >= 3 / 8 && diceRoll3 < 4 / 8) {result3 = 4; 
+        } else if (diceRoll3 >= 4 / 8 && diceRoll3 < 5 / 8) {result3 = 5; 
+        } else if (diceRoll3 >= 5 / 8 && diceRoll3 < 6 / 8) {result3 = 6; 
+        } else if (diceRoll3 >= 6 / 8 && diceRoll3 < 7 / 8) {result3 = 7; 
+        } else if (diceRoll3 >= 7 / 8 && diceRoll3 < 1) {result3 = 8; 
+        } 
+
+        document.querySelector('.D8-die').innerHTML = `${result3}`;
+
+     }
+
+     function playGame4 ()  {
+      const diceRoll4 = Math.random();
+      let result4 = 'Roll';
+        if (diceRoll4 >= 0 && diceRoll4 < 1 / 10) {result4 = 1;
+        } else if (diceRoll4 >= 1 / 10 && diceRoll4 < 2 / 10) {result4 = 2;
+        } else if (diceRoll4 >= 2 / 10 && diceRoll4 < 3 / 10) {result4 = 3;
+        } else if (diceRoll4 >= 3 / 10 && diceRoll4 < 4 / 10) {result4 = 4; 
+        } else if (diceRoll4 >= 4 / 10 && diceRoll4 < 5 / 10) {result4 = 5; 
+        } else if (diceRoll4 >= 5 / 10 && diceRoll4 < 6 / 10) {result4 = 6; 
+        } else if (diceRoll4 >= 6 / 10 && diceRoll4 < 7 / 10) {result4 = 7; 
+        } else if (diceRoll4 >= 7 / 10 && diceRoll4 < 8 / 10) {result4 = 8; 
+        } else if (diceRoll4 >= 8 / 10 && diceRoll4 < 9 / 10) {result4 = 9; 
+        } else if (diceRoll4 >= 9 / 10 && diceRoll4 < 1) {result4 = 10; 
+        } 
+        
+        document.querySelector('.D10-die').innerHTML = `${result4}`;
+
+        
+     }
+
+     function playGame5 ()  {
+      const diceRoll5 = Math.random();
+      let result5 = 'Roll';
+        if (diceRoll5 >= 0 && diceRoll5 < 1 / 12) {result5 = 1;
+        } else if (diceRoll5 >= 1 / 12 && diceRoll5 < 2 / 12) {result5 = 2;
+        } else if (diceRoll5 >= 2 / 12 && diceRoll5 < 3 / 12) {result5 = 3;
+        } else if (diceRoll5 >= 3 / 12 && diceRoll5 < 4 / 12) {result5 = 4; 
+        } else if (diceRoll5 >= 4 / 12 && diceRoll5 < 5 / 12) {result5 = 5; 
+        } else if (diceRoll5 >= 5 / 12 && diceRoll5 < 6 / 12) {result5 = 6; 
+        } else if (diceRoll5 >= 6 / 12 && diceRoll5 < 7 / 12) {result5 = 7; 
+        } else if (diceRoll5 >= 7 / 12 && diceRoll5 < 8 / 12) {result5 = 8; 
+        } else if (diceRoll5 >= 8 / 12 && diceRoll5 < 9 / 12) {result5 = 9; 
+        } else if (diceRoll5 >= 9 / 12 && diceRoll5 < 10 / 12) {result5 = 10; 
+        } else if (diceRoll5 >= 10 / 12 && diceRoll5 < 11 / 12) {result5 = 11; 
+        } else if (diceRoll5 >= 11 / 12 && diceRoll5 < 1) {result5 = 12; 
+        } 
+
+        document.querySelector('.D12-die').innerHTML = `${result5}`;
+
+        }
+
+     function playGame6 ()  {
+      const diceRoll6 = Math.random();
+      let result6 = 'Roll';
+        if (diceRoll6 >= 0 && diceRoll6 < 1 / 20) {result6 = 1;
+        } else if (diceRoll6 >= 1 / 20 && diceRoll6 < 2 / 20) {result6 = 2;
+        } else if (diceRoll6 >= 2 / 20 && diceRoll6 < 3 / 20) {result6 = 3;
+        } else if (diceRoll6 >= 3 / 20 && diceRoll6 < 4 / 20) {result6 = 4; 
+        } else if (diceRoll6 >= 4 / 20 && diceRoll6 < 5 / 20) {result6 = 5; 
+        } else if (diceRoll6 >= 5 / 20 && diceRoll6 < 6 / 20) {result6 = 6; 
+        } else if (diceRoll6 >= 6 / 20 && diceRoll6 < 7 / 20) {result6 = 7; 
+        } else if (diceRoll6 >= 7 / 20 && diceRoll6 < 8 / 20) {result6 = 8; 
+        } else if (diceRoll6 >= 8 / 20 && diceRoll6 < 9 / 20) {result6 = 9; 
+        } else if (diceRoll6 >= 9 / 20 && diceRoll6 < 10 /20) {result6 = 10; 
+        } else if (diceRoll6 >= 10 / 20 && diceRoll6 < 11 / 20) {result6 = 11;
+        } else if (diceRoll6 >= 11 / 20 && diceRoll6 < 12 / 20) {result6 = 12;
+        } else if (diceRoll6 >= 12 / 20 && diceRoll6 < 13 / 20) {result6 = 13; 
+        } else if (diceRoll6 >= 13 / 20 && diceRoll6 < 14 / 20) {result6 = 14; 
+        } else if (diceRoll6 >= 14 / 20 && diceRoll6 < 15 / 20) {result6 = 15; 
+        } else if (diceRoll6 >= 15 / 20 && diceRoll6 < 16 / 20) {result6 = 16; 
+        } else if (diceRoll6 >= 16 / 20 && diceRoll6 < 17 / 20) {result6 = 17; 
+        } else if (diceRoll6 >= 17 / 20 && diceRoll6 < 18 / 20) {result6 = 18; 
+        } else if (diceRoll6 >= 18 / 20 && diceRoll6 < 19 / 20) {result6 = 19; 
+        } else if (diceRoll6 >= 19 / 20 && diceRoll6 < 1) {result6 = 20; 
+        } 
+        
+        document.querySelector('.D20-die').innerHTML = `${result6}`;
+        
+     }
+
+     function playGame7 ()  {
+      const diceRoll7 = Math.random();
+      let result7 = 'Roll';
+        if (diceRoll7 >= 0 && diceRoll7 < 1 / 10) {result7 = 10;
+        } else if (diceRoll7 >= 1 / 10 && diceRoll7 < 2 / 10) {result7 = 20;
+        } else if (diceRoll7 >= 2 / 10 && diceRoll7 < 3 / 10) {result7 = 30;
+        } else if (diceRoll7 >= 3 / 10 && diceRoll7 < 4 / 10) {result7 = 40; 
+        } else if (diceRoll7 >= 4 / 10 && diceRoll7 < 5 / 10) {result7 = 50; 
+        } else if (diceRoll7 >= 5 / 10 && diceRoll7 < 6 / 10) {result7 = 60; 
+        } else if (diceRoll7 >= 6 / 10 && diceRoll7 < 7 / 10) {result7 = 70; 
+        } else if (diceRoll7 >= 7 / 10 && diceRoll7 < 8 / 10) {result7 = 80; 
+        } else if (diceRoll7 >= 8 / 10 && diceRoll7 < 9 / 10) {result7 = 90; 
+        } else if (diceRoll7 >= 9 / 10 && diceRoll7 < 1) {result7 = 100;
+        } 
+
+        document.querySelector('.D100-die').innerHTML = `${result7}`;
+        
+     }
+     
+     function reloadPage () {
+    window.location.reload();
+    };
+
+    </script>
+  </body>
+
+</html>
